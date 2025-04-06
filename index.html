@@ -878,7 +878,7 @@
               <div class="product-info">
                 <h3 class="product-title">Mango Achar</h3>
                 <div class="product-price">600 per 1KG</div>
-                <p class="product-description">Traditional Punjabi style mango pickle with perfect blend of spices</p>
+                <p class="product-description">Traditional style mango pickle with perfect blend of spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Mango Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
                 </button>
@@ -1425,7 +1425,7 @@
 
     // WhatsApp order function - Updat+92 to +92300-7272222
     function sendUrduOrder(productName, price) {
-      const phoneNumb = '+923007272222';
+      const phoneNumb = +923007272222;
       const message = `Assalam-o-Alaikum! Mein ${productName} khareedna chahta/chahti hoon, price ${price} PKR per kg.`;
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
