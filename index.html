@@ -288,12 +288,12 @@
     /* Banner Section */
     .banner {
       width: 100%;
-      border-radius: 15px;
+      border-radius: 20px;
       overflow: hidden;
       margin-bottom: 3rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       position: relative;
-      height: 400px;
+      height: 500px;
     }
     
     .banner img {
@@ -396,41 +396,42 @@
     /* Products Grid */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
     }
 
     .product-card {
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.01);
+      border-radius: 15px;
       overflow: hidden;
       transition: var(--transition);
       background: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 10px 30px rgba(0,0,0,0.08);
       position: relative;
     }
 
     .product-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
     
     .product-badge {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 20px;
+      right: 20px;
       background: var(--accent);
       color: white;
-      padding: 0.3rem 0.8rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       z-index: 2;
+      box-shadow: 0 5px 15px rgba(255, 158, 0, 0.3);
     }
 
     .product-img-container {
-      height: 220px;
+      height: 250px;
       overflow: hidden;
       position: relative;
     }
@@ -439,15 +440,15 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.8s ease;
     }
     
     .product-card:hover .product-img {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     .product-info {
-      padding: 1.8rem;
+      padding: 2rem;
     }
 
     .product-title {
@@ -846,14 +847,14 @@
     </header>
 
     <div class="container">
-<!-- Banner Section -->
+      <!-- Banner Section -->
       <div class="banner">
-        <a href="<a href="https://ibb.co/xKx9dRVj"><img src="https://i.ibb.co/0pH4vdPM/FB-IMG-1743926957683.jpg" alt="FB-IMG-1743926957683" border="0"></a>
+        <img src="https://i.ibb.co/0pH4vdPM/FB-IMG-1743926957683.jpg" alt="Premium Quality Achars">
         <div class="banner-content">
           <h2>Premium Quality Achars</h2>
           <p>Made with traditional recipes and the finest ingredients from Shikarpur</p>
         </div>
-      </div></div>
+      </div>
 
       <!-- Category Tabs -->
       <div class="content-wrapper">
