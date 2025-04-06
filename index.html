@@ -1423,12 +1423,29 @@
       });
     });
 
-    // WhatsApp order function - 92300-7272222
+    // WhatsApp order function - updated to +92300-7272222
     function sendUrduOrder(productName, price) {
-      const phoneNumb = "923007272222"";
-      const message = `Assalam-o-Alaikum! Mein ${productName} khareedna chahta/chahti hoon, price ${price} PKR per kg.`;
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
+      const phone = '+923007272222';
+      const urduMessage = 
+`Aslam-o-Alikum! 
+
+*🏆 Abdul Qayoom Achar Store - Shikarpur*  
+
+*🛒 Meri Order Details:*
+➤ *Achar:* ${productName}  
+➤ *Miqdar:* 1KG  
+➤ *Qeemat:* Rs. ${price}  
+
+*🚚 Delivery Options:*  
+✓ Self Pickup (Lakhi Gate)  
+✓ Home Delivery (Shikarpur only)  
+
+*📞 Contact:* 0300-7272222  
+
+*Shukriya!* 😍  
+*Apka intezaar rahega...*`;
+
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(urduMessage)}`, '_blank');
     }
   </script>
 </body>
