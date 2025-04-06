@@ -3,6 +3,85 @@
 <head>
   <title>Abdul Qayoom Achar Store Shikarpur</title>
   <style>
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    #loading-text {
+      color: white;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    /* Popup Message Styles */
+    #welcome-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 10000;
+      text-align: center;
+      max-width: 100%;
+      display: none;
+    }
+    
+    #welcome-popup h2 {
+      color: #4a00e0;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    
+    #welcome-popup p {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    #close-popup {
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    #close-popup:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Main Content Styles */
     body {
       background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 50%, #ffffff 100%);
       background-attachment: fixed;
@@ -116,367 +195,408 @@
     }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Adding FontAwesome for WhatsApp icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="content-wrapper">
-    <h1>Shikarpur ki Mashahoor Achar </h1>
-    <h2 style="text-align: center; color: #4a00e0;">Abdul Qayoom Achar Store Shikarpur</h2>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <div id="loading-text">Loading Achar Collection...</div>
+  </div>
 
-    <!-- Mango Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/HD414jKX"><img src="https://i.ibb.co/Y7QYQxNb/IMG-20250406-WA0011.jpg" alt="Mango Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Mango Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+  <!-- Welcome Popup -->
+  <div id="welcome-popup">
+    <h2>Welcome to Abdul Qayoom Achar Store!</h2>
+    <p>Experience the authentic taste of Shikarpur's finest achars</p>
+    <p style="font-weight: bold; color: #8e2de2; font-size: 18px;">Made by <span style="color: #4a00e0;">Rafay</span></p>
+    <button id="close-popup">Continue Shopping</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+    <div class="content-wrapper">
+      <h1>Shikarpur ki Mashahoor Achar </h1>
+      <h2 style="text-align: center; color: #4a00e0;">Abdul Qayoom Achar Store Shikarpur</h2>
+
+      <!-- Mango Achar -->
+      <div class="product">
+        <a href="https://ibb.co/HD414jKX"><img src="https://i.ibb.co/Y7QYQxNb/IMG-20250406-WA0011.jpg" alt="Mango Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Mango Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Mango Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Mango Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Green Chilli Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/qLPkyrQz"><img src="https://i.ibb.co/TDFmvg3Z/IMG-20250406-WA0001.jpg" alt="Green Chilli Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Green Chilli Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Green Chilli Achar -->
+      <div class="product">
+        <a href="https://ibb.co/qLPkyrQz"><img src="https://i.ibb.co/TDFmvg3Z/IMG-20250406-WA0001.jpg" alt="Green Chilli Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Green Chilli Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Green Chilli Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Green Chilli Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Khatta Metha Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/Jj5mW5dY"><img src="https://i.ibb.co/tp8Qw8h0/IMG-20250406-WA0007.jpg" alt="Khatta Metha Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Khatta Metha Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Khatta Metha Achar -->
+      <div class="product">
+        <a href="https://ibb.co/Jj5mW5dY"><img src="https://i.ibb.co/tp8Qw8h0/IMG-20250406-WA0007.jpg" alt="Khatta Metha Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Khatta Metha Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Khatta Metha Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Khatta Metha Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Salad Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/0VGMzDPf"><img src="https://i.ibb.co/qFrs2ybR/IMG-20250406-WA0021.jpg" alt="Salad Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Salad Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Salad Achar -->
+      <div class="product">
+        <a href="https://ibb.co/0VGMzDPf"><img src="https://i.ibb.co/qFrs2ybR/IMG-20250406-WA0021.jpg" alt="Salad Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Salad Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Salad Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Salad Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Mix Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/hFwySxYq"><img src="https://i.ibb.co/SwGPzDfL/IMG-20250406-WA0006.jpg" alt="Mix Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Mix Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Mix Achar -->
+      <div class="product">
+        <a href="https://ibb.co/hFwySxYq"><img src="https://i.ibb.co/SwGPzDfL/IMG-20250406-WA0006.jpg" alt="Mix Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Mix Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Mix Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Mix Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Mix Fruit Chatni with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/99xdhcPQ"><img src="https://i.ibb.co/FbQdXmpR/IMG-20250406-WA0015.jpg" alt="Mix Fruit Chatni" border="0"></a>
-      <div class="product-info">
-        <h2>Mix Fruit Chatni</h2>
-        <p>Rs. 700 per 1KG</p>
+      <!-- Mix Fruit Chatni -->
+      <div class="product">
+        <a href="https://ibb.co/99xdhcPQ"><img src="https://i.ibb.co/FbQdXmpR/IMG-20250406-WA0015.jpg" alt="Mix Fruit Chatni" border="0"></a>
+        <div class="product-info">
+          <h2>Mix Fruit Chatni</h2>
+          <p>Rs. 700 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Mix Fruit Chatni', '700')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Mix Fruit Chatni', '700')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <div class="product">
-      <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Lemon Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Lemon Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Lemon Achar -->
+      <div class="product">
+        <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Lemon Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Lemon Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Lemon Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Lemon Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Lotus Root Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/jP9BW5ZM"><img src="https://i.ibb.co/5gXtn9x8/IMG-20250406-WA0018-1.jpg" alt="Lotus Root Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Lotus Root Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Lotus Root Achar -->
+      <div class="product">
+        <a href="https://ibb.co/jP9BW5ZM"><img src="https://i.ibb.co/5gXtn9x8/IMG-20250406-WA0018-1.jpg" alt="Lotus Root Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Lotus Root Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Lotus Root Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Lotus Root Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Carrot Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/vxfTBrWd"><img src="https://i.ibb.co/tMnvhN62/IMG-20250406-WA0002.jpg" alt="Carrot Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Carrot Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Carrot Achar -->
+      <div class="product">
+        <a href="https://ibb.co/vxfTBrWd"><img src="https://i.ibb.co/tMnvhN62/IMG-20250406-WA0002.jpg" alt="Carrot Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Carrot Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Carrot Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Carrot Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Chicken Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/7NC3snJ1"><img src="https://i.ibb.co/cX3W46cr/IMG-20250406-WA0013.jpg" alt="Chicken Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Chicken Achar</h2>
-        <p>Rs. 900 per 1KG</p>
+      <!-- Chicken Achar -->
+      <div class="product">
+        <a href="https://ibb.co/7NC3snJ1"><img src="https://i.ibb.co/cX3W46cr/IMG-20250406-WA0013.jpg" alt="Chicken Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Chicken Achar</h2>
+          <p>Rs. 900 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Chicken Achar', '900')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Chicken Achar', '900')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Falsa Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/bjtCYxKs"><img src="https://i.ibb.co/0p561kGC/IMG-20250406-WA0017.jpg" alt="Falsa Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Falsa Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Falsa Achar -->
+      <div class="product">
+        <a href="https://ibb.co/bjtCYxKs"><img src="https://i.ibb.co/0p561kGC/IMG-20250406-WA0017.jpg" alt="Falsa Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Falsa Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Falsa Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Falsa Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Green Chatni with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/0jXb23qm"><img src="https://i.ibb.co/zh5vxwsQ/IMG-20250406-WA0000.jpg" alt="Green Chatni" border="0"></a>
-      <div class="product-info">
-        <h2>Green Chatni</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Green Chatni -->
+      <div class="product">
+        <a href="https://ibb.co/0jXb23qm"><img src="https://i.ibb.co/zh5vxwsQ/IMG-20250406-WA0000.jpg" alt="Green Chatni" border="0"></a>
+        <div class="product-info">
+          <h2>Green Chatni</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Green Chatni', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Green Chatni', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Karela Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/bgnpRFGX"><img src="https://i.ibb.co/8DVF4bQ9/IMG-20250406-WA0022.jpg" alt="Karela Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Karela Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Karela Achar -->
+      <div class="product">
+        <a href="https://ibb.co/bgnpRFGX"><img src="https://i.ibb.co/8DVF4bQ9/IMG-20250406-WA0022.jpg" alt="Karela Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Karela Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Karela Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Karela Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Plum Chatni with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/mV6By06k"><img src="https://i.ibb.co/nNz01Bz9/IMG-20250406-WA0014.jpg" alt="Plum Chatni" border="0"></a>
-      <div class="product-info">
-        <h2>Plum Chatni</h2>
-        <p>Rs. 800 per 1KG</p>
+      <!-- Plum Chatni -->
+      <div class="product">
+        <a href="https://ibb.co/mV6By06k"><img src="https://i.ibb.co/nNz01Bz9/IMG-20250406-WA0014.jpg" alt="Plum Chatni" border="0"></a>
+        <div class="product-info">
+          <h2>Plum Chatni</h2>
+          <p>Rs. 800 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Plum Chatni', '800')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Plum Chatni', '800')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Lasoora Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/JFc5C8gR"><img src="https://i.ibb.co/93psGBS9/IMG-20250406-WA0005.jpg" alt="Lasoora Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Lasoora Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Lasoora Achar -->
+      <div class="product">
+        <a href="https://ibb.co/JFc5C8gR"><img src="https://i.ibb.co/93psGBS9/IMG-20250406-WA0005.jpg" alt="Lasoora Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Lasoora Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Lasoora Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Lasoora Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Mango Methi Chatni with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/m55g8hgm"><img src="https://i.ibb.co/b55DJNDx/IMG-20250406-WA0016.jpg" alt="Mango Methi Chatni" border="0"></a>
-      <div class="product-info">
-        <h2>Mango Methi Chatni</h2>
-        <p>Rs. 700 per 1KG</p>
+      <!-- Mango Methi Chatni -->
+      <div class="product">
+        <a href="https://ibb.co/m55g8hgm"><img src="https://i.ibb.co/b55DJNDx/IMG-20250406-WA0016.jpg" alt="Mango Methi Chatni" border="0"></a>
+        <div class="product-info">
+          <h2>Mango Methi Chatni</h2>
+          <p>Rs. 700 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Mango Methi Chatni', '700')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Mango Methi Chatni', '700')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <div class="product">
-      <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Ginger Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Ginger Achar</h2>
-        <p>Rs. 700 per 1KG</p>
+      <!-- Ginger Achar -->
+      <div class="product">
+        <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Ginger Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Ginger Achar</h2>
+          <p>Rs. 700 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Ginger Achar', '700')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Ginger Achar', '700')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Imli Chatni with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/PZNk2jg3"><img src="https://i.ibb.co/kgxZLBXk/IMG-20250406-WA0019.jpg" alt="Imli Chatni" border="0"></a>
-      <div class="product-info">
-        <h2>Imli Chatni</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Imli Chatni -->
+      <div class="product">
+        <a href="https://ibb.co/PZNk2jg3"><img src="https://i.ibb.co/kgxZLBXk/IMG-20250406-WA0019.jpg" alt="Imli Chatni" border="0"></a>
+        <div class="product-info">
+          <h2>Imli Chatni</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Imli Chatni', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Imli Chatni', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Garlic Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/TMq73FWm"><img src="https://i.ibb.co/QvjTw1Dr/IMG-20250406-WA0008.jpg" alt="Garlic Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Garlic Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Garlic Achar -->
+      <div class="product">
+        <a href="https://ibb.co/TMq73FWm"><img src="https://i.ibb.co/QvjTw1Dr/IMG-20250406-WA0008.jpg" alt="Garlic Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Garlic Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Garlic Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Garlic Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Murabba Apple with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/Gh8fs0C"><img src="https://i.ibb.co/x4BKmDz/IMG-20250406-WA0009.jpg" alt="Murabba Apple" border="0"></a>
-      <div class="product-info">
-        <h2>Murabba Apple</h2>
-        <p>Rs. 700 per 1KG</p>
+      <!-- Murabba Apple -->
+      <div class="product">
+        <a href="https://ibb.co/Gh8fs0C"><img src="https://i.ibb.co/x4BKmDz/IMG-20250406-WA0009.jpg" alt="Murabba Apple" border="0"></a>
+        <div class="product-info">
+          <h2>Murabba Apple</h2>
+          <p>Rs. 700 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Murabba Apple', '700')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Murabba Apple', '700')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Chickpeas Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/Y7wxSpjg"><img src="https://i.ibb.co/JRg9T5kZ/IMG-20250406-WA0003.jpg" alt="Chickpeas Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Chickpeas Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Chickpeas Achar -->
+      <div class="product">
+        <a href="https://ibb.co/Y7wxSpjg"><img src="https://i.ibb.co/JRg9T5kZ/IMG-20250406-WA0003.jpg" alt="Chickpeas Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Chickpeas Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Chickpeas Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Chickpeas Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <div class="product">
-      <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Murabba Carrot" border="0"></a>
-      <div class="product-info">
-        <h2>Murabba Carrot</h2>
-        <p>Rs. 700 per 1KG</p>
+      <!-- Murabba Carrot -->
+      <div class="product">
+        <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Murabba Carrot" border="0"></a>
+        <div class="product-info">
+          <h2>Murabba Carrot</h2>
+          <p>Rs. 700 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Murabba Carrot', '700')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Murabba Carrot', '700')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <div class="product">
-      <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Korma Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Korma Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Korma Achar -->
+      <div class="product">
+        <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Korma Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Korma Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Korma Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Korma Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <div class="product">
-      <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Murabba Hareer" border="0"></a>
-      <div class="product-info">
-        <h2>Murabba Hareer</h2>
-        <p>Rs. 800 per 1KG</p>
+      <!-- Murabba Hareer -->
+      <div class="product">
+        <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Murabba Hareer" border="0"></a>
+        <div class="product-info">
+          <h2>Murabba Hareer</h2>
+          <p>Rs. 800 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Murabba Hareer', '800')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Murabba Hareer', '800')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Sabzi Pani with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/DfdxkD2c"><img src="https://i.ibb.co/s970QvYx/IMG-20250406-WA0012.jpg" alt="Sabzi Pani" border="0"></a>
-      <div class="product-info">
-        <h2>Sabzi Pani</h2>
-        <p>Rs. 500 per 1KG</p>
+      <!-- Sabzi Pani -->
+      <div class="product">
+        <a href="https://ibb.co/DfdxkD2c"><img src="https://i.ibb.co/s970QvYx/IMG-20250406-WA0012.jpg" alt="Sabzi Pani" border="0"></a>
+        <div class="product-info">
+          <h2>Sabzi Pani</h2>
+          <p>Rs. 500 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Sabzi Pani', '500')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Sabzi Pani', '500')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Murabba Amla with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/Gh8fs0C"><img src="https://i.ibb.co/x4BKmDz/IMG-20250406-WA0009.jpg" alt="Murabba Amla" border="0"></a>
-      <div class="product-info">
-        <h2>Murabba Amla</h2>
-        <p>Rs. 800 per 1KG</p>
+      <!-- Murabba Amla -->
+      <div class="product">
+        <a href="https://ibb.co/Gh8fs0C"><img src="https://i.ibb.co/x4BKmDz/IMG-20250406-WA0009.jpg" alt="Murabba Amla" border="0"></a>
+        <div class="product-info">
+          <h2>Murabba Amla</h2>
+          <p>Rs. 800 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Murabba Amla', '800')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Murabba Amla', '800')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Spinach Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/yKfhKrS"><img src="https://i.ibb.co/DmVGmZp/IMG-20250406-WA0004.jpg" alt="Spinach Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Spinach Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Spinach Achar -->
+      <div class="product">
+        <a href="https://ibb.co/yKfhKrS"><img src="https://i.ibb.co/DmVGmZp/IMG-20250406-WA0004.jpg" alt="Spinach Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Spinach Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Spinach Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Spinach Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <div class="product">
-      <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Special Papar" border="0"></a>
-      <div class="product-info">
-        <h2>Special Papar</h2>
-        <p>Rs. 1200 per 1KG</p>
+      <!-- Special Papar -->
+      <div class="product">
+        <a href="https://ibb.co/cKmjNQNX"><img src="https://i.ibb.co/wZvfK4Kr/FB-IMG-1743862220468.jpg" alt="Special Papar" border="0"></a>
+        <div class="product-info">
+          <h2>Special Papar</h2>
+          <p>Rs. 1200 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Special Papar', '1200')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Special Papar', '1200')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <!-- Onion Achar with Custom Image -->
-    <div class="product">
-      <a href="https://ibb.co/Vy4Y7R5"><img src="https://i.ibb.co/83ZgWqt/IMG-20250406-WA0010.jpg" alt="Onion Achar" border="0"></a>
-      <div class="product-info">
-        <h2>Onion Achar</h2>
-        <p>Rs. 600 per 1KG</p>
+      <!-- Onion Achar -->
+      <div class="product">
+        <a href="https://ibb.co/Vy4Y7R5"><img src="https://i.ibb.co/83ZgWqt/IMG-20250406-WA0010.jpg" alt="Onion Achar" border="0"></a>
+        <div class="product-info">
+          <h2>Onion Achar</h2>
+          <p>Rs. 600 per 1KG</p>
+        </div>
+        <button class="order-button" onclick="sendUrduOrder('Onion Achar', '600')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </button>
       </div>
-      <button class="order-button" onclick="sendUrduOrder('Onion Achar', '600')">
-        <i class="fab fa-whatsapp"></i> Order Now
-      </button>
-    </div>
 
-    <footer>
-      <p>📍 Lakhi Gate, Shikarpur | ☎ 0333-7272258, 0300-7272222</p>
-      <p>⏰ Opening Hours: 10:00 AM - 11:00 PM</p>
-    </footer>
+      <footer>
+        <p>📍 Lakhi Gate, Shikarpur | ☎ 0333-7272258, 0300-7272222</p>
+        <p>⏰ Opening Hours: 10:00 AM - 11:00 PM</p>
+      </footer>
+    </div>
   </div>
 
   <script>
+    // Loading screen and popup logic
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        // Hide loading screen
+        document.getElementById('loading-screen').style.opacity = '0';
+        
+        // Show main content and popup after loading
+        setTimeout(function() {
+          document.getElementById('loading-screen').style.display = 'none';
+          document.getElementById('main-content').style.display = 'block';
+          document.getElementById('welcome-popup').style.display = 'block';
+        }, 500);
+      }, 2000); // 2 second loading time
+    });
+
+    // Close popup button
+    document.getElementById('close-popup').addEventListener('click', function() {
+      document.getElementById('welcome-popup').style.display = 'none';
+    });
+
+    // WhatsApp order function
     function sendUrduOrder(productName, price) {
       const phone = "923007272222";
-      
-      // Modern Urdu message in English alphabets
       const urduMessage = 
 `Aslam-o-Alikum! 
 
@@ -489,15 +609,12 @@
 
 *🚚 Delivery Options:*  
 ✓ Self Pickup (Lakhi Gate)  
-✓ Home Delivery (Pakistan only)   
+✓ Home Delivery (Shikarpur only)  
 
 *Shukriya!* 😍  
 *Apka intezaar rahega...*`;
 
-      const encodedMessage = encodeURIComponent(urduMessage);
-      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-      
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(urduMessage)}`, '_blank');
     }
   </script>
 </body>
