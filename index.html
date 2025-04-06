@@ -116,11 +116,8 @@
     }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    function showOrderMessage(productName) {
-      alert("\u2728 Abdul Qayoom Achar Store \u2728\n\nShukriya! '" + productName + "' ka order dene ke liye humse rabta karein:\n\n\u260E\ufe0f 03007272222\n\n📍 Lakhi Gate, Shikarpur");
-    }
-  </script>
+  <!-- Adding FontAwesome for WhatsApp icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="content-wrapper">
@@ -134,7 +131,9 @@
         <h2>Mango Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Mango Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Mango Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Green Chilli Achar with Custom Image -->
@@ -144,7 +143,9 @@
         <h2>Green Chilli Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Green Chilli Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Green Chilli Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Khatta Metha Achar with Custom Image -->
@@ -154,7 +155,9 @@
         <h2>Khatta Metha Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Khatta Metha Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Khatta Metha Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Salad Achar with Custom Image -->
@@ -164,7 +167,9 @@
         <h2>Salad Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Salad Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Salad Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Mix Achar with Custom Image -->
@@ -174,7 +179,9 @@
         <h2>Mix Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Mix Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Mix Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Mix Fruit Chatni with Custom Image -->
@@ -184,7 +191,9 @@
         <h2>Mix Fruit Chatni</h2>
         <p>Rs. 700 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Mix Fruit Chatni')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Mix Fruit Chatni', '700')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <div class="product">
@@ -193,7 +202,9 @@
         <h2>Lemon Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Lemon Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Lemon Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Lotus Root Achar with Custom Image -->
@@ -203,7 +214,9 @@
         <h2>Lotus Root Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Lotus Root Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Lotus Root Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Carrot Achar with Custom Image -->
@@ -213,7 +226,9 @@
         <h2>Carrot Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Carrot Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Carrot Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Chicken Achar with Custom Image -->
@@ -223,7 +238,9 @@
         <h2>Chicken Achar</h2>
         <p>Rs. 900 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Chicken Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Chicken Achar', '900')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Falsa Achar with Custom Image -->
@@ -233,7 +250,9 @@
         <h2>Falsa Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Falsa Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Falsa Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Green Chatni with Custom Image -->
@@ -243,7 +262,9 @@
         <h2>Green Chatni</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Green Chatni')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Green Chatni', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Karela Achar with Custom Image -->
@@ -253,7 +274,9 @@
         <h2>Karela Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Karela Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Karela Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Plum Chatni with Custom Image -->
@@ -263,7 +286,9 @@
         <h2>Plum Chatni</h2>
         <p>Rs. 800 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Plum Chatni')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Plum Chatni', '800')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Lasoora Achar with Custom Image -->
@@ -273,7 +298,9 @@
         <h2>Lasoora Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Lasoora Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Lasoora Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Mango Methi Chatni with Custom Image -->
@@ -283,7 +310,9 @@
         <h2>Mango Methi Chatni</h2>
         <p>Rs. 700 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Mango Methi Chatni')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Mango Methi Chatni', '700')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <div class="product">
@@ -292,7 +321,9 @@
         <h2>Ginger Achar</h2>
         <p>Rs. 700 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Ginger Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Ginger Achar', '700')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Imli Chatni with Custom Image -->
@@ -302,7 +333,9 @@
         <h2>Imli Chatni</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Imli Chatni')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Imli Chatni', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Garlic Achar with Custom Image -->
@@ -312,7 +345,9 @@
         <h2>Garlic Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Garlic Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Garlic Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Murabba Apple with Custom Image -->
@@ -322,7 +357,9 @@
         <h2>Murabba Apple</h2>
         <p>Rs. 700 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Murabba Apple')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Murabba Apple', '700')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Chickpeas Achar with Custom Image -->
@@ -332,7 +369,9 @@
         <h2>Chickpeas Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Chickpeas Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Chickpeas Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <div class="product">
@@ -341,7 +380,9 @@
         <h2>Murabba Carrot</h2>
         <p>Rs. 700 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Murabba Carrot')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Murabba Carrot', '700')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <div class="product">
@@ -350,7 +391,9 @@
         <h2>Korma Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Korma Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Korma Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <div class="product">
@@ -359,7 +402,9 @@
         <h2>Murabba Hareer</h2>
         <p>Rs. 800 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Murabba Hareer')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Murabba Hareer', '800')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Sabzi Pani with Custom Image -->
@@ -369,7 +414,9 @@
         <h2>Sabzi Pani</h2>
         <p>Rs. 500 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Sabzi Pani')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Sabzi Pani', '500')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Murabba Amla with Custom Image -->
@@ -379,7 +426,9 @@
         <h2>Murabba Amla</h2>
         <p>Rs. 800 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Murabba Amla')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Murabba Amla', '800')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Spinach Achar with Custom Image -->
@@ -389,7 +438,9 @@
         <h2>Spinach Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Spinach Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Spinach Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <div class="product">
@@ -398,7 +449,9 @@
         <h2>Special Papar</h2>
         <p>Rs. 1200 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Special Papar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Special Papar', '1200')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <!-- Onion Achar with Custom Image -->
@@ -408,7 +461,9 @@
         <h2>Onion Achar</h2>
         <p>Rs. 600 per 1KG</p>
       </div>
-      <button class="order-button" onclick="showOrderMessage('Onion Achar')">Order Now</button>
+      <button class="order-button" onclick="sendUrduOrder('Onion Achar', '600')">
+        <i class="fab fa-whatsapp"></i> Order Now
+      </button>
     </div>
 
     <footer>
@@ -416,5 +471,34 @@
       <p>⏰ Opening Hours: 10:00 AM - 11:00 PM</p>
     </footer>
   </div>
+
+  <script>
+    function sendUrduOrder(productName, price) {
+      const phone = "923007272222";
+      
+      // Modern Urdu message in English alphabets
+      const urduMessage = 
+`Aslam-o-Alikum! 
+
+*🏆 Abdul Qayoom Achar Store - Shikarpur*  
+
+*🛒 Meri Order Details:*
+➤ *Achar:* ${productName}  
+➤ *Miqdar:* 1KG  
+➤ *Qeemat:* Rs. ${price}  
+
+*🚚 Delivery Options:*  
+✓ Self Pickup (Lakhi Gate)  
+✓ Home Delivery (Pakistan only)   
+
+*Shukriya!* 😍  
+*Apka intezaar rahega...*`;
+
+      const encodedMessage = encodeURIComponent(urduMessage);
+      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+      
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
