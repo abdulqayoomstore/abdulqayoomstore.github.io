@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abdul Qayoom Achar Store - Shikarpur's Finest Achars</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+  <style>      
     :root {
       --primary: #4b0082; /* Deep purple */
       --secondary: #6a0dad;
@@ -569,6 +569,60 @@
       line-height: 1.8;
     }
 
+/* Gallery Styles */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  height: 250px;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .gallery-item {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-item {
+    height: 150px;
+  }
+}
+
     /* Footer */
     .footer {
       background-color: rgba(44, 62, 80, 0.97);
@@ -792,14 +846,14 @@
     </header>
 
     <div class="container">
-      <!-- Banner Section -->
+<!-- Banner Section -->
       <div class="banner">
-        <a href="https://ibb.co/xVnQHpY"><img src="https://i.ibb.co/CxjF2k6/FB-IMG-1743873956758.jpg" alt="Premium Achars Banner"></a>
+        <a href="<a href="https://ibb.co/xKx9dRVj"><img src="https://i.ibb.co/0pH4vdPM/FB-IMG-1743926957683.jpg" alt="FB-IMG-1743926957683" border="0"></a>
         <div class="banner-content">
           <h2>Premium Quality Achars</h2>
           <p>Made with traditional recipes and the finest ingredients from Shikarpur</p>
         </div>
-      </div>
+      </div></div>
 
       <!-- Category Tabs -->
       <div class="content-wrapper">
@@ -1224,7 +1278,7 @@
       <div class="content-wrapper">
         <div class="about-section">
           <div class="about-image">
-            <img src="https://i.ibb.co/0jXb23qm/IMG-20250406-WA0000.jpg" alt="About Our Store">
+            <a href="https://ibb.co/tFpqjSk"><img src="https://i.ibb.co/GNQWYXB/FB-IMG-1743926945472.jpg" alt="FB-IMG-1743926945472" border="0"></a>
           </div>
           <div class="about-content">
             <h2>About Our Store</h2>
@@ -1237,6 +1291,55 @@
         </div>
       </div>
     </div>
+
+<!-- Add this section right before the About Section in your existing code -->
+<div class="content-wrapper">
+  <h2 class="section-title">Our Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/0pH4vdPM/FB-IMG-1743926957683.jpg" alt="Achar Store" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/MWGB4rM/IMG-20250406-WA0024.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/d4ZC7n1x/IMG-20250406-WA0023.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/8DVF4bQ9/IMG-20250406-WA0022.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/qFrs2ybR/IMG-20250406-WA0021.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/rRN2RPTT/IMG-20250406-WA0020.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/5gXtn9x8/IMG-20250406-WA0018-1.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/kgxZLBXk/IMG-20250406-WA0019.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/83ZgWqt/IMG-20250406-WA0010.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/0p561kGC/IMG-20250406-WA0017.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/b55DJNDx/IMG-20250406-WA0016.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/FbQdXmpR/IMG-20250406-WA0015.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/nNz01Bz9/IMG-20250406-WA0014.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/qMmFWrG2/FB-IMG-1743877919979.jpg" alt="Achar Store" class="gallery-img">
+    </div>
+  </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1320,9 +1423,9 @@
       });
     });
 
-    // WhatsApp order function - Updated to +92300-7272222
+    // WhatsApp order function - Updat+92 to +92300-7272222
     function sendUrduOrder(productName, price) {
-      const phoneNumber = '+923007272222';
+      const phoneNumb = '+923007272222';
       const message = `Assalam-o-Alaikum! Mein ${productName} khareedna chahta/chahti hoon, price ${price} PKR per kg.`;
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
