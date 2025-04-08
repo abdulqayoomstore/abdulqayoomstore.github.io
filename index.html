@@ -533,6 +533,50 @@
       line-height: 1.7;
     }
 
+    .price-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .original-price:before {
+      content: 'Rs.';
+      font-size: 0.9rem;
+      margin-right: 3px;
+      opacity: 0.7;
+    }
+
+    .sale-price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .sale-price:before {
+      content: 'Rs.';
+      font-size: 1rem;
+      margin-right: 3px;
+      opacity: 0.9;
+    }
+
+    .sale-badge {
+      background: #e74c3c;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-left: 5px;
+      animation: pulseBadge 2s infinite;
+    }
+    
     .order-button {
       display: inline-flex;
       align-items: center;
@@ -1070,8 +1114,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Mango Achar</h3>
-                <div class="product-price">450 per 500g</div>
-                <div class="product-price">900 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Traditional style mango pickle with perfect blend of spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Mango Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1086,8 +1129,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Green Chilli Achar</h3>
-                <div class="product-price">400 per 500g</div>
-                <div class="product-price">800 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Spicy green chillies marinated in mustard oil and spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Green Chilli Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1102,8 +1144,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Khatta Metha Achar</h3>
-                <div class="product-price">400 per 500g</div>
-                <div class="product-price">800 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Perfect balance of sweet and sour flavors with mixed vegetables</p>
                 <button class="order-button" onclick="sendUrduOrder('Khatta Metha Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1116,10 +1157,7 @@
               <div class="product-img-container">
                 <img src="https://i.ibb.co/qFrs2ybR/IMG-20250406-WA0021.jpg" alt="Salad Achar" class="product-img">
               </div>
-              <div class="product-info">
-                <h3 class="product-title">Salad Achar</h3>
-                <div class="product-price">350 per 500g</div>
-                <div class="product-price">700 per 1KG</div>
+              <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Fresh vegetable salad pickle with light spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Salad Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1134,8 +1172,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Mix Achar</h3>
-                <div class="product-price">450 per 500g</div>
-                <div class="product-price">900 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Assorted vegetable pickle with traditional spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Mix Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1150,8 +1187,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Lemon Achar</h3>
-                <div class="product-price">400 per 500g</div>
-                <div class="product-price">800 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Tangy lemon pickle with special blend of spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Lemon Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1166,8 +1202,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Lotus Root Achar</h3>
-                <div class="product-price">400 per 500g</div>
-                <div class="product-price">800 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Crunchy lotus root pickle with traditional spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Lotus Root Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1182,8 +1217,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Carrot Achar</h3>
-                <div class="product-price">420 per 500g</div>
-                <div class="product-price">840 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Crunchy carrot pickle with special spice mix</p>
                 <button class="order-button" onclick="sendUrduOrder('Carrot Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1199,8 +1233,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Chicken Achar</h3>
-                <div class="product-price">550 per 500g</div>
-                <div class="product-price">1100 per 1KG</div>
+                <div class="price-row"> <span class="original-price">650</span> <span class="sale-price">450</span> <span class="sale-badge">23% OFF</span> </div> <div class="price-row"> <span class="original-price">1100</span> <span class="sale-price">900</span> <span class="sale-badge">20% OFF</span> </div>
                 <p class="product-description">Spicy chicken pickle with traditional Shikarpur recipe</p>
                 <button class="order-button" onclick="sendUrduOrder('Chicken Achar', '900')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1215,8 +1248,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Falsa Achar</h3>
-                <div class="product-price">350 per 500g</div>
-                <div class="product-price">700 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Tangy falsa fruit pickle with special spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Falsa Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1231,8 +1263,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Karela Achar</h3>
-                <div class="product-price">300 per 500g</div>
-                <div class="product-price">600 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">10% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Bitter gourd pickle with special spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Karela Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1242,13 +1273,13 @@
 
             <!-- Lasoora Achar -->
             <div class="product-card">
+                <div class="product-badge">Royal</div>
               <div class="product-img-container">
                 <img src="https://i.ibb.co/93psGBS9/IMG-20250406-WA0005.jpg" alt="Lasoora Achar" class="product-img">
               </div>
               <div class="product-info">
-                <h3 class="product-title">Branded royal</h3>
-                <div class="product-price">500 per 500g</div>
-                <div class="product-price">1000 per 1KG</div>
+                <h3 class="product-title">Lasoora Achar</h3>
+                <div class="price-row"> <span class="original-price">550</span> <span class="sale-price">400</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">750</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Traditional lasoora pickle with authentic taste</p>
                 <button class="order-button" onclick="sendUrduOrder('Lasoora Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1263,8 +1294,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Garlic Achar</h3>
-                <div class="product-price">300 per 500g</div>
-                <div class="product-price">600 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Garlic pickle with health benefits and spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Garlic Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1279,8 +1309,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Spinach Achar</h3>
-                <div class="product-price">330 per 500g</div>
-                <div class="product-price">660 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Healthy spinach pickle with spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Spinach Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1295,8 +1324,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Onion Achar</h3>
-                <div class="product-price">300 per 500g</div>
-                <div class="product-price">600 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Onion pickle with special spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Onion Achar', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1318,8 +1346,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Green Chatni</h3>
-                <div class="product-price">430 per 500g</div>
-                <div class="product-price">860 per 1KG</div>
+                <div class="price-row"> <span class="original-price">450</span> <span class="sale-price">350</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">900</span> <span class="sale-price">700</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Fresh green chutney with coriander and mint</p>
                 <button class="order-button" onclick="sendUrduOrder('Green Chatni', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1335,8 +1362,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Mix Fruit Chatni</h3>
-                <div class="product-price">450 per 500g</div>
-                <div class="product-price">900 per 1KG</div>
+                <div class="price-row"> <span class="original-price">550</span> <span class="sale-price">450</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">950</span> <span class="sale-price">800</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Sweet and tangy fruit chutney with multiple fruits</p>
                 <button class="order-button" onclick="sendUrduOrder('Mix Fruit Chatni', '700')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1351,8 +1377,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Mango Methi Chatni</h3>
-                <div class="product-price">460 per 500g</div>
-                <div class="product-price">920 per 1KG</div>
+                <div class="price-row"> <span class="original-price">550</span> <span class="sale-price">450</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">950</span> <span class="sale-price">800</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Mango and fenugreek chutney with special spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Mango Methi Chatni', '700')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1367,8 +1392,7 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Imli Chatni</h3>
-                <div class="product-price">350 per 500g</div>
-                <div class="product-price">700 per 1KG</div>
+                <div class="price-row"> <span class="original-price">550</span> <span class="sale-price">450</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">950</span> <span class="sale-price">800</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Tangy tamarind chutney with special spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Imli Chatni', '600')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1378,14 +1402,13 @@
 
             <!-- Plum Chatni -->
             <div class="product-card">
-              <div class="product-badge">New</div>
+              <div class="product-badge">Best Chatni Ever</div>
               <div class="product-img-container">
                 <img src="https://i.ibb.co/nNz01Bz9/IMG-20250406-WA0014.jpg" alt="Plum Chatni" class="product-img">
               </div>
               <div class="product-info">
-                <h3 class="product-title">Royal Plum Chatni</h3>
-                <div class="product-price">500 per 500g</div>
-                <div class="product-price">1000 per 1KG</div>
+                <h3 class="product-title">Plum Chatni</h3>
+                <div class="price-row"> <span class="original-price">650</span> <span class="sale-price">500</span> <span class="sale-badge">15% OFF</span> </div> <div class="price-row"> <span class="original-price">1150</span> <span class="sale-price">900</span> <span class="sale-badge">15% OFF</span> </div>
                 <p class="product-description">Sweet and sour plum chutney with spices</p>
                 <button class="order-button" onclick="sendUrduOrder('Plum Chatni', '800')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1407,8 +1430,8 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Murabba Apple</h3>
-                <div class="product-price">450 per 500g</div>
-                <div class="product-price">900 per 1KG</div>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
                 <p class="product-description">Sweet apple preserve with traditional recipe</p>
                 <button class="order-button" onclick="sendUrduOrder('Murabba Apple', '700')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1423,8 +1446,8 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Murabba Carrot</h3>
-                <div class="product-price">450 per 500g</div>
-                <div class="product-price">900 per 1KG</div>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
                 <p class="product-description">Sweet carrot preserve with traditional recipe</p>
                 <button class="order-button" onclick="sendUrduOrder('Murabba Carrot', '700')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1440,8 +1463,8 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Murabba Hareer</h3>
-                <div class="product-price">550 per 500g</div>
-                <div class="product-price">1100 per 1KG</div>
+                <div class="product-price">---- per 500g</div>
+                <div class="product-price">---- per 1KG</div>
                 <p class="product-description">Premium hareer preserve with traditional recipe</p>
                 <button class="order-button" onclick="sendUrduOrder('Murabba Hareer', '800')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1456,8 +1479,8 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Murabba Amla</h3>
-                <div class="product-price">500 per 500g</div>
-                <div class="product-price">100 per 1KG</div>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
                 <p class="product-description">Healthy amla preserve with traditional recipe</p>
                 <button class="order-button" onclick="sendUrduOrder('Murabba Amla', '800')">
                   <i class="fab fa-whatsapp"></i> Order Now
@@ -1480,8 +1503,8 @@
               </div>
               <div class="product-info">
                 <h3 class="product-title">Special Papad</h3>
-                <div class="product-price">800 per 500g</div>
-                <div class="product-price">1600 per 1KG</div>
+                <div class="product-price">600 per 500g</div>
+                <div class="product-price">1200 per 1KG</div>
                 <p class="product-description">Premium quality special papar</p>
                 <button class="order-button" onclick="sendUrduOrder('Special Papar', '1200')">
                   <i class="fab fa-whatsapp"></i> Order Now
