@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="KIZzBK7JuybDV3TIXkXdDhWFSREUPWRaYABAj-fTl0Q" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Server in Maintenance</title>
-  
+  <title>Abdul Qayoom Achar Store - Shikarpur's Finest Achars</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
   <style>
     :root {
       --primary: #4b0082; /* Deep purple */
@@ -399,14 +399,622 @@
       background: var(--gradient);
       border-radius: 5px;
     }
-</style>
+
+    /* Category Tabs */
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    
+    .category-tab {
+      padding: 1rem 2.5rem;
+      background: white;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border: 2px solid rgba(90, 24, 154, 0.1);
+      font-size: 1.1rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .category-tab:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border-color: rgba(90, 24, 154, 0.3);
+    }
+    
+    .category-tab.active {
+      background: var(--gradient);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 10px 25px rgba(90, 24, 154, 0.3);
+    }
+    
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .product-card {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      transform: translateY(0);
+    }
+
+    .product-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      z-index: 2;
+      box-shadow: 0 5px 15px rgba(255, 158, 0, 0.3);
+      animation: pulseBadge 2s infinite;
+    }
+
+    @keyframes pulseBadge {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .product-img-container {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    
+    .product-card:hover .product-img {
+      transform: scale(1.15);
+    }
+
+    .product-info {
+      padding: 2rem;
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .product-price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .product-price:before {
+      content: 'Rs.';
+      font-size: 1rem;
+      margin-right: 5px;
+      opacity: 0.9;
+    }
+
+    .product-description {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    
+    
+
+    .order-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      color: white;
+      padding: 1.1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      width: 100%;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .order-button:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      opacity: 0;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .order-button i {
+      margin-right: 12px;
+      font-size: 1.3rem;
+    }
+
+    .order-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(90, 24, 154, 0.3);
+    }
+    
+    .order-button:hover:after {
+      opacity: 1;
+    }
+
+    /* About Section */
+    .about-section {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-top: 5rem;
+    }
+    
+    .about-image {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .about-image:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.1);
+    }
+    
+    .about-content {
+      flex: 1;
+    }
+    
+    .about-content h2 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-size: 2.3rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .about-content h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 5px;
+      background: var(--gradient);
+      border-radius: 5px;
+    }
+    
+    .about-content p {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    /* Gallery Styles */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      height: 280px;
+      position: relative;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.15);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: rgba(33, 37, 41, 0.98);
+      color: white;
+      padding: 6rem 0 3rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin-top: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer:before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(90, 24, 154, 0.1) 0%, transparent 70%);
+      transform: rotate(30deg);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .footer-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 4rem;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 2.5rem;
+      font-size: 1.6rem;
+      position: relative;
+      padding-bottom: 1.2rem;
+    }
+
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 4px;
+    }
+
+    .footer-column p, .footer-column a {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1.5rem;
+      display: block;
+      transition: var(--transition);
+      text-decoration: none;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .footer-column a:hover {
+      color: white;
+      transform: translateX(10px);
+    }
+    
+    .footer-column i {
+      margin-right: 12px;
+      width: 25px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(90, 24, 154, 0.3);
+    }
+
+    .social-links i {
+      color: white;
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 5rem;
+      margin-top: 5rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 70px;
+      height: 70px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 1400px) {
+      .container {
+        max-width: 1200px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .about-section {
+        flex-direction: column;
+      }
+      
+      .about-image {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .about-content {
+        margin-top: 3rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+    }
+
+    @media (max-width: 992px) {
+      .header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .header p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .banner {
+        height: 400px;
+      }
+      
+      .banner-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .banner-content p {
+        font-size: 1.2rem;
+      }
+      
+      .content-wrapper {
+        padding: 2.5rem;
+      }
+      
+      .product-card {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 2.5rem 0;
+      }
+      
+      .logo {
+        position: static;
+        margin: 0 auto 1.5rem;
+      }
+      
+      .header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content-wrapper {
+        padding: 2rem;
+      }
+      
+      #welcome-popup {
+        width: 90%;
+        padding: 2.5rem;
+      }
+      
+      .banner {
+        height: 350px;
+      }
+      
+      .banner-content {
+        padding: 2rem;
+      }
+      
+      .banner-content h2 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+      
+      .about-section {
+        margin-top: 4rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .header {
+        padding: 2rem 0;
+      }
+      
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .header p {
+        font-size: 1.1rem;
+      }
+      
+      .content-wrapper {
+        padding: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .category-tabs {
+        gap: 1rem;
+      }
+      
+      .category-tab {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+      }
+      
+      .product-info {
+        padding: 1.5rem;
+      }
+      
+      .product-title {
+        font-size: 1.3rem;
+      }
+      
+      .product-description {
+        font-size: 1rem;
+      }
+      
+      .order-button {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .footer-column {
+        text-align: center;
+      }
+      
+      .footer-column h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K43D487N"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
   <!-- Premium Loading Screen -->
   <div id="loading-screen">
     <div class="loader-container">
@@ -429,9 +1037,573 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Header -->
     <header class="header">
       <div class="logo">AQ</div>
-      <h1>Abdul Qayoom Achar Store/h1>
-      <p>Under Maintenance </p>
-<script>
+      <h1>Abdul Qayoom Achar Store</h1>
+      <p>Shikarpur's Authentic & Traditional Achars Since 1985</p>
+    </header>
+
+    <div class="container">
+      <!-- Banner Section -->
+      <div class="banner">
+        <img src="https://i.ibb.co/0pH4vdPM/FB-IMG-1743926957683.jpg" alt="Premium Quality Achars">
+        <div class="banner-content">
+          <h2>Premium Quality Achars</h2>
+          <p>Made with traditional recipes and the finest ingredients from Shikarpur</p>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="content-wrapper">
+        <div class="category-tabs">
+          <div class="category-tab active" data-category="achar">Achars</div>
+          <div class="category-tab" data-category="chatni">Chatnis</div>
+          <div class="category-tab" data-category="murabba">Murabbas</div>
+          <div class="category-tab" data-category="papar">Papads</div>
+        </div>
+        
+        <!-- Achar Section -->
+        <div class="category-section" id="achar-section">
+          <h2 class="section-title">Our Premium Achar Collection</h2>
+                              
+          <div class="products-grid">
+            <!-- Mango Achar -->
+            <div class="product-card">
+              <div class="product-badge">Best Seller</div>
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/Y7QYQxNb/IMG-20250406-WA0011.jpg" alt="Mango Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Mango Achar</h3>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
+                <p class="product-description">Traditional style mango pickle with perfect blend of spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Mango Achar', '800')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Green Chilli Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/TDFmvg3Z/IMG-20250406-WA0001.jpg" alt="Green Chilli Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Green Chilli Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Spicy green chillies marinated in mustard oil and spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Green Chilli Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Khatta Metha Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/tp8Qw8h0/IMG-20250406-WA0007.jpg" alt="Khatta Metha Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Khatta Metha Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Perfect balance of sweet and sour flavors with mixed vegetables</p>
+                <button class="order-button" onclick="sendUrduOrder('Khatta Metha Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Salad Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/qFrs2ybR/IMG-20250406-WA0021.jpg" alt="Salad Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Salad Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Fresh vegetable salad pickle with light spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Salad Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Mix Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/SwGPzDfL/IMG-20250406-WA0006.jpg" alt="Mix Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Mix Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Assorted vegetable pickle with traditional spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Mix Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Lemon Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/h3hrHRB/IMG-20250407-WA0042.jpg" alt="Lemon Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Lemon Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Tangy lemon pickle with special blend of spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Lemon Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Lotus Root Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/5gXtn9x8/IMG-20250406-WA0018-1.jpg" alt="Lotus Root Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Lotus Root Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Crunchy lotus root pickle with traditional spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Lotus Root Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Carrot Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/tMnvhN62/IMG-20250406-WA0002.jpg" alt="Carrot Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Carrot Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Crunchy carrot pickle with special spice mix</p>
+                <button class="order-button" onclick="sendUrduOrder('Carrot Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Chicken Achar -->
+            <div class="product-card">
+              <div class="product-badge">Special</div>
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/cX3W46cr/IMG-20250406-WA0013.jpg" alt="Chicken Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Chicken Achar</h3>
+                <div class="product-price">500 per 500g</div>
+                <div class="product-price">1000 per 1KG</div>
+                <p class="product-description">Spicy chicken pickle with traditional Shikarpur recipe</p>
+                <button class="order-button" onclick="sendUrduOrder('Chicken Achar', '1000')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Falsa Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/0p561kGC/IMG-20250406-WA0017.jpg" alt="Falsa Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Falsa Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Tangy falsa fruit pickle with special spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Falsa Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Karela Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/8DVF4bQ9/IMG-20250406-WA0022.jpg" alt="Karela Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Karela Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Bitter gourd pickle with special spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Karela Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Lasoora Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/93psGBS9/IMG-20250406-WA0005.jpg" alt="Lasoora Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Lasoora Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Traditional lasoora pickle with authentic taste</p>
+                <button class="order-button" onclick="sendUrduOrder('Lasoora Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Garlic Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/QvjTw1Dr/IMG-20250406-WA0008.jpg" alt="Garlic Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Garlic Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Garlic pickle with health benefits and spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Garlic Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Spinach Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/DmVGmZp/IMG-20250406-WA0004.jpg" alt="Spinach Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Spinach Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Healthy spinach pickle with spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Spinach Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Onion Achar -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/83ZgWqt/IMG-20250406-WA0010.jpg" alt="Onion Achar" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Onion Achar</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Onion pickle with special spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Onion Achar', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chatni Section -->
+        <div class="category-section" id="chatni-section" style="display: none;">
+          <h2 class="section-title">Our Chatni Collection</h2>
+          
+          <div class="products-grid">
+            <!-- Green Chatni -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/zh5vxwsQ/IMG-20250406-WA0000.jpg" alt="Green Chatni" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Green Chatni</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Fresh green chutney with coriander and mint</p>
+                <button class="order-button" onclick="sendUrduOrder('Green Chatni', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Mix Fruit Chatni -->
+            <div class="product-card">
+              <div class="product-badge">Popular</div>
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/FbQdXmpR/IMG-20250406-WA0015.jpg" alt="Mix Fruit Chatni" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Mix Fruit Chatni</h3>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
+                <p class="product-description">Sweet and tangy fruit chutney with multiple fruits</p>
+                <button class="order-button" onclick="sendUrduOrder('Mix Fruit Chatni', '800')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Mango Methi Chatni -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/b55DJNDx/IMG-20250406-WA0016.jpg" alt="Mango Methi Chatni" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Mango Methi Chatni</h3>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
+                <p class="product-description">Mango and fenugreek chutney with special spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Mango Methi Chatni', '800')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Imli Chatni -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/kgxZLBXk/IMG-20250406-WA0019.jpg" alt="Imli Chatni" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Imli Chatni</h3>
+                <div class="product-price">350 per 500g</div>
+                <div class="product-price">700 per 1KG</div>
+                <p class="product-description">Tangy tamarind chutney with special spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Imli Chatni', '700')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Plum Chatni -->
+            <div class="product-card">
+              <div class="product-badge">New</div>
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/nNz01Bz9/IMG-20250406-WA0014.jpg" alt="Plum Chatni" class="product-img">                
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Plum Chatni</h3>
+                <div class="product-price">450 per 500g</div>
+                <div class="product-price">900 per 1KG</div>
+                <p class="product-description">Sweet and sour plum chutney with spices</p>
+                <button class="order-button" onclick="sendUrduOrder('Plum Chatni', '900')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Murabba Section -->
+        <div class="category-section" id="murabba-section" style="display: none;">
+          <h2 class="section-title">Our Murabba Collection</h2>
+          
+          <div class="products-grid">
+            <!-- Murabba Apple -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/x4BKmDz/IMG-20250406-WA0009.jpg" alt="Murabba Apple" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Murabba Apple</h3>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
+                <p class="product-description">Sweet apple preserve with traditional recipe</p>
+                <button class="order-button" onclick="sendUrduOrder('Murabba Apple', '800')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Murabba Carrot -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <a href="https://ibb.co/Q3LzHd2v"><img src="https://i.ibb.co/v6pgdY74/IMG-20250407-WA0031.jpg" alt="Murabba Carrot" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Murabba Carrot</h3>
+                <div class="product-price">400 per 500g</div>
+                <div class="product-price">800 per 1KG</div>
+                <p class="product-description">Sweet carrot preserve with traditional recipe</p>
+                <button class="order-button" onclick="sendUrduOrder('Murabba Carrot', '800')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Murabba Hareer -->
+            <div class="product-card">
+              <div class="product-badge">Premium</div>
+              <div class="product-img-container">
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/zVw2v4B0/download-1.jpg" alt="download-1" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>image ru</a><br />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Murabba Hareer</h3>
+                <div class="product-price">450 per 500g</div>
+                <div class="product-price">900 per 1KG</div>
+                <p class="product-description">Premium hareer preserve with traditional recipe</p>
+                <button class="order-button" onclick="sendUrduOrder('Murabba Hareer', '900')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Murabba Amla -->
+            <div class="product-card">
+              <div class="product-img-container">
+                <img src="https://i.ibb.co/x4BKmDz/IMG-20250406-WA0009.jpg" alt="Murabba Amla" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Murabba Amla</h3>
+                <div class="product-price">450 per 500g</div>
+                <div class="product-price">900 per 1KG</div>
+                <p class="product-description">Healthy amla preserve with traditional recipe</p>
+                <button class="order-button" onclick="sendUrduOrder('Murabba Amla', '900')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Papar Section -->
+        <div class="category-section" id="papar-section" style="display: none;">
+          <h2 class="section-title">Our Papad Collection</h2>
+          
+          <div class="products-grid">
+            <!-- Special Papad -->
+            <div class="product-card">
+              <div class="product-badge">Special</div>
+              <div class="product-img-container">
+                <a href="https://ibb.co/4npkvFDZ"><img src="https://i.ibb.co/YFhgnNK7/Picsart-25-04-07-16-33-09-395.jpg" alt="Spacial papad" class="product-img">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Special Papad</h3>
+                <div class="product-price">650 per 500g</div>
+                <div class="product-price">1300 per 1KG</div>
+                <p class="product-description">Premium quality special papar</p>
+                <button class="order-button" onclick="sendUrduOrder('Special Papar', '1300')">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="content-wrapper">
+        <div class="about-section">
+          <div class="about-image">
+            <a href="https://ibb.co/tFpqjSk"><img src="https://i.ibb.co/GNQWYXB/FB-IMG-1743926945472.jpg" alt="FB-IMG-1743926945472" border="0"></a>
+          </div>
+          <div class="about-content">
+            <h2>About Our Store</h2>
+            <p>Abdul Qayoom Achar Store has been serving Shikarpur with authentic, homemade achars since 1985. We use traditional recipes passed down through generations, ensuring the same great taste that our customers have loved for decades.</p>
+            <p>All our products are made with the freshest ingredients and no artificial preservatives, maintaining the authentic flavors of Shikarpur's culinary heritage.</p>
+            <button class="order-button" style="width: auto; padding: 0.9rem 2.2rem; display: inline-flex;">
+              <i class="fas fa-phone-alt"></i> Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Add this section right before the About Section in your existing code -->
+<div class="content-wrapper">
+  <h2 class="section-title">Our Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/0pH4vdPM/FB-IMG-1743926957683.jpg" alt="Achar Store" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/MWGB4rM/IMG-20250406-WA0024.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/d4ZC7n1x/IMG-20250406-WA0023.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/8DVF4bQ9/IMG-20250406-WA0022.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/qFrs2ybR/IMG-20250406-WA0021.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/rRN2RPTT/IMG-20250406-WA0020.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/5gXtn9x8/IMG-20250406-WA0018-1.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/kgxZLBXk/IMG-20250406-WA0019.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/83ZgWqt/IMG-20250406-WA0010.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/0p561kGC/IMG-20250406-WA0017.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/b55DJNDx/IMG-20250406-WA0016.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/FbQdXmpR/IMG-20250406-WA0015.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/nNz01Bz9/IMG-20250406-WA0014.jpg" alt="Achar Products" class="gallery-img">
+    </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/qMmFWrG2/FB-IMG-1743877919979.jpg" alt="Achar Store" class="gallery-img">
+    </div>
+  </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Abdul Qayoom Achar Store</h3>
+          <p>Shikarpur's most trusted achar brand since 1985. Authentic flavors made with traditional recipes.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="#products"><i class="fas fa-chevron-right"></i> Our Products</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> About Us</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Testimonials</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Gallery</a>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Lakhi Gate, Shikarpur</p>
+          <p><i class="fas fa-phone"></i> 0333-7272258</p>
+          <p><i class="fas fa-phone"></i> 0300-7272222</p>
+          <p><i class="fas fa-clock"></i> 10:00 AM - 11:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Abdul Qayoom Achar Store. All Rights Reserved. | Made by Rafay</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/923007272222" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>      
     // Loading screen and popup logic
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -451,14 +1623,325 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }, 3000); // 3 second loading time
     });
 
-    // Close popup button
+    // Close popup button    
     document.getElementById('close-popup').addEventListener('click', function() {
       document.getElementById('welcome-popup').style.animation = 'popIn 0.4s reverse forwards';
       setTimeout(function() {
         document.getElementById('welcome-popup').style.display = 'none';
       }, 400);
     });
+
+    // Category tabs functionality
+    const tabs = document.querySelectorAll('.category-tab');
+    const sections = document.querySelectorAll('.category-section');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all sections
+        sections.forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show the selected section
+        const category = this.getAttribute('data-category');
+        document.getElementById(`${category}-section`).style.display = 'block';
+      });
+    });
+
+    // WhatsApp order function - updated with form
+  // 1. First, make sure you have this function defined
+function sendUrduOrder(productName, price500g, price1kg) {
+  // Create form overlay with fade-in animation
+  const formOverlay = document.createElement('div');
+  formOverlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+  `;
+
+  // Create form container with slide-up animation
+  const formContainer = document.createElement('div');
+  formContainer.style.cssText = `
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.4, 1) 0.1s forwards;
+    position: relative;
+  `;
+
+  // Add close button (X icon)
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.cssText = `
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s ease;
+  `;
+  closeBtn.onmouseenter = () => closeBtn.style.color = '#ff4757';
+  closeBtn.onmouseleave = () => closeBtn.style.color = '#666';
+  closeBtn.onclick = () => {
+    formOverlay.style.animation = 'fadeOut 0.3s ease-out forwards';
+    formContainer.style.animation = 'slideDown 0.3s ease-out forwards';
+    setTimeout(() => document.body.removeChild(formOverlay), 300);
+  };
+
+  // Form HTML with beautiful styling
+  formContainer.innerHTML = `
+    <style>
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      @keyframes slideDown { from { transform: translateY(0); opacity: 1; } to { transform: translateY(20px); opacity: 0; } }
+      
+      .order-form h2 {
+        color: #4b0082;
+        text-align: center;
+        margin-bottom: 1.8rem;
+        font-size: 1.8rem;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+      .order-form h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #4b0082, #6a0dad);
+        border-radius: 2px;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+        color: #333;
+      }
+      .form-control {
+        width: 100%;
+        padding: 0.9rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+      .form-control:focus {
+        border-color: #6a0dad;
+        box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+        outline: none;
+      }
+      .package-options {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.8rem;
+      }
+      .package-option {
+        flex: 1;
+        border: 2px solid #eee;
+        padding: 1.2rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .package-option:hover {
+        border-color: #6a0dad;
+        transform: translateY(-3px);
+      }
+      .package-option input {
+        margin-right: 0.5rem;
+      }
+      .price-summary {
+        background: #f9f4ff;
+        padding: 1.2rem;
+        border-radius: 10px;
+        margin: 1.8rem 0;
+      }
+      .price-summary p {
+        margin: 0.5rem 0;
+        font-size: 1.05rem;
+      }
+      .total-price {
+        font-weight: 700;
+        color: #4b0082;
+        font-size: 1.2rem;
+      }
+      .submit-btn {
+        background: linear-gradient(135deg, #4b0082 0%, #6a0dad 100%);
+        color: white;
+        border: none;
+        padding: 1.1rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(75, 0, 130, 0.2);
+      }
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(75, 0, 130, 0.3);
+      }
+      .submit-btn i {
+        margin-right: 10px;
+        font-size: 1.3rem;
+      }
+    </style>
+
+    <div class="order-form">
+      <h2>Order ${productName}</h2>
+      
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <textarea id="address" name="address" rows="3" class="form-control" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Select Package</label>
+          <div class="package-options">
+            <label class="package-option">
+              <input type="radio" name="package" value="500g" checked data-price="${price500g}">
+              500g - Rs. ${price500g}
+            </label>
+            <label class="package-option">
+              <input type="radio" name="package" value="1kg" data-price="${price1kg}">
+              1KG - Rs. ${price1kg}
+            </label>
+          </div>
+        </div>
+
+        <div class="price-summary">
+          <p><strong>Delivery Charges:</strong> Rs. 300</p>
+          <p><strong>Total Price:</strong> Rs. <span id="totalPrice" class="total-price">${Number(price500g) + 300}</span></p>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fab fa-whatsapp"></i> Submit Order via WhatsApp
+        </button>
+      </form>
+    </div>
+  `;
+
+  // Add to DOM
+  document.body.appendChild(formOverlay);
+  formOverlay.appendChild(formContainer);
+  formContainer.prepend(closeBtn);
+
+  // Price calculation
+  const updateTotal = () => {
+    const selected = formContainer.querySelector('input[name="package"]:checked');
+    const price = selected.value === '500g' ? price500g : price1kg;
+    document.getElementById('totalPrice').textContent = Number(price) + 300;
+  };
+
+  formContainer.querySelectorAll('input[name="package"]').forEach(radio => {
+    radio.addEventListener('change', updateTotal);
+  });
+
+  // Form submission
+  formContainer.querySelector('#orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Add loading effect
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    submitBtn.disabled = true;
+    
+    const formData = new FormData(this);
+    const package = formData.get('package');
+    const price = package === '500g' ? price500g : price1kg;
+    const total = Number(price) + 300;
+    
+    const message = `Aslam-o-Alikum! 
+
+*🏆 Abdul Qayoom Achar Store - Shikarpur*  
+
+*📝 Order Details:*
+➤ Product: ${productName}  
+➤ Package: ${package === '500g' ? '500g' : '1KG'}  
+➤ Price: Rs. ${price}  
+➤ Delivery: Rs. 300  
+➤ Total: Rs. ${total}  
+
+*👤 Customer Info:*
+➤ Name: ${formData.get('name')}  
+➤ Phone: ${formData.get('phone')}  
+➤ Address: ${formData.get('address')}  
+
+*📞 Contact:* 0300-7272222  
+
+Shukriya! 😍`;
+
+    setTimeout(() => {
+      window.open(`https://wa.me/923127272258?text=${encodeURIComponent(message)}`, '_blank');
+      formOverlay.style.animation = 'fadeOut 0.3s ease-out forwards';
+      formContainer.style.animation = 'slideDown 0.3s ease-out forwards';
+      setTimeout(() => document.body.removeChild(formOverlay), 300);
+    }, 800);
+  });
+}
+
+// Update all order buttons (run after page loads)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.order-button').forEach(button => {
+    const originalOnclick = button.getAttribute('onclick');
+    if (originalOnclick && originalOnclick.includes("sendUrduOrder")) {
+      const match = originalOnclick.match(/sendUrduOrder\('(.+?)', '(\d+)'\)/);
+      if (match) {
+        const productName = match[1];
+        const price1kg = match[2];
+        const price500g = Math.floor(Number(price1kg) / 2);
+        button.setAttribute('onclick', `sendUrduOrder('${productName}', '${price500g}', '${price1kg}')`);
+      }
+    }
+  });
+});
+        
 </script>
 </body>
 </html>
-  
